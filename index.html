@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicklist - Lista de Compras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho com botão voltar -->
+        <header class="header">
+            <button class="btn-voltar" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+            <h1 class="titulo">
+                <i class="fas fa-shopping-basket"></i>
+                Quicklist
+            </h1>
+        </header>
+
+        <!-- Área de adicionar novo item -->
+        <div class="add-item-container">
+            <input 
+                type="text" 
+                id="novoItemInput" 
+                placeholder="Digite um novo item (ex: Arroz, Feijão...)"
+                class="input-novo-item"
+            >
+            <button id="btnAdicionar" class="btn-adicionar">
+                <i class="fas fa-plus-circle"></i>
+                Adicionar Item
+            </button>
+        </div>
+
+        <!-- Lista de compras -->
+        <div class="lista-container">
+            <h2 class="subtitulo">
+                <i class="fas fa-list"></i>
+                Minha Lista de Compras
+                <span id="contadorItens" class="contador">0 itens</span>
+            </h2>
+            
+            <ul id="listaCompras" class="lista-compras">
+                <!-- Itens serão inseridos aqui via JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Área de mensagens de alerta -->
+        <div id="mensagemAlerta" class="mensagem-alerta">
+            <!-- Mensagens aparecerão aqui -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

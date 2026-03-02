@@ -1,0 +1,371 @@
+/* Reset e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(220, 53, 69, 0.3);
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.btn-voltar {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0;
+}
+
+.btn-voltar:hover {
+    background: #f8d7da;
+    transform: translateX(-5px);
+}
+
+.titulo {
+    flex: 1;
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.titulo i {
+    margin-right: 10px;
+    color: #dc3545;
+}
+
+/* Área de adicionar item */
+.add-item-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.input-novo-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-novo-item:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.input-novo-item::placeholder {
+    color: #999;
+}
+
+.btn-adicionar {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+.btn-adicionar:hover {
+    background: linear-gradient(135deg, #c82333, #b21f2d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
+}
+
+.btn-adicionar:active {
+    transform: translateY(0);
+}
+
+/* Lista de compras */
+.lista-container {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.subtitulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.contador {
+    background: #dc3545;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.lista-compras {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo dos itens da lista */
+.item-lista {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    animation: fadeIn 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.item-lista:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.15);
+}
+
+/* Checkbox customizado */
+.item-lista input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #dc3545;
+}
+
+/* Nome do item */
+.item-nome {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Item concluído */
+.item-concluido .item-nome {
+    text-decoration: line-through;
+    color: #999;
+    opacity: 0.7;
+}
+
+/* Botão remover */
+.btn-remover {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-remover:hover {
+    background: #dc3545;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-remover:active {
+    transform: scale(0.95);
+}
+
+/* Animação de remoção */
+.item-removendo {
+    animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+/* Mensagem de alerta */
+.mensagem-alerta {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #28a745;
+    color: #155724;
+    display: none;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mensagem-alerta.mostrar {
+    display: block;
+}
+
+.mensagem-alerta.erro {
+    border-left-color: #dc3545;
+    color: #721c24;
+    background: #f8d7da;
+}
+
+.mensagem-alerta.sucesso {
+    border-left-color: #28a745;
+    color: #155724;
+    background: #d4edda;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 1.8rem;
+    }
+
+    .btn-voltar {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-item-container {
+        flex-direction: column;
+    }
+
+    .btn-adicionar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .item-lista {
+        padding: 12px 15px;
+    }
+
+    .subtitulo {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dc3545;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c82333;
+}
+
+/* Efeito de pulso para o botão adicionar (opcional) */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
+
+.btn-adicionar:focus {
+    animation: pulse 1.5s infinite;
+}
